@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For you!</title>
+    <style>
+      /* Google Fonts */
+      @import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+
+      /* Global */
+      html {
+        min-height: 100%;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        color: rgb(5, 5, 5, 0.75);
+        color: white;
+        text-rendering: optimizeLegibility;
+        font-smoothing: antialiased;
+        -webkit-font-smoothing: antialiased;
+        font-family: "Anonymous Pro", monospace;
+        background-color: rgb(235, 235, 235);
+      }
+      /*
+Main
+*/
+      .main {
+        height: calc(100vh - 8em);
+        padding: 4em;
+        box-shadow: 0 0 100px rgba(0, 0, 0, 0.9) inset;
+        background-color: rgba(0, 0, 0, 0.25);
+      }
+      .line-1 {
+        position: relative;
+        top: 50%;
+        width: 20em;
+        margin: 0 auto;
+        border-right: 2px solid rgba(255, 255, 255, 0.75);
+        font-size: 250%;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        transform: translateY(-50%);
+        margin-bottom: 4px;
+        background-color: rgba(0, 255, 255, 0.5);
+      }
+      span {
+        color: rgb(255, 145, 0);
+      }
+
+      /* Video */
+      .bg_vid {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        aspect-ratio: 1/1;
+        width: 100%;
+        height: 100%;
+      }
+
+      /* Animation */
+      .anim-typewriter {
+        animation: typewriter 3s steps(40) 1s 1 normal both,
+          blinkTextCursor 500ms steps(20) infinite normal;
+      }
+      .anim-delay {
+        animation-delay: 5s;
+      }
+      @keyframes typewriter {
+        from {
+          width: 0;
+        }
+        to {
+          width: 20em;
+        }
+      }
+      @keyframes blinkTextCursor {
+        from {
+          border-right-color: rgba(5, 5, 5, 1);
+        }
+        to {
+          border-right-color: transparent;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <video src="valentine.mp4" playback autoplay loop class="bg_vid"></video>
+      <p class="line-1 anim-typewriter">
+        Wanted to write more but<span>....</span>
+      </p>
+      <p class="line-1 anim-typewriter anim-delay">
+        well, I love you yashi<span>!</span>
+      </p>
+    </div>
+  </body>
+  <script>
+    const vid = document.querySelector(".bg_vid");
+    vid.playbackRate = 0.75;
+  </script>
+</html>
